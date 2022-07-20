@@ -36,10 +36,6 @@
 (column-number-mode t)
 (global-hl-line-mode t)
 
-;;(display-time)
-;;(display-battery-mode)
-;;(setq battery-update-interval 60)
-
 (setq-default
  tab-always-indent 'complete
  tab-width 2)
@@ -71,5 +67,12 @@
 (bind-key "M-`" 'other-frame)
 (bind-key "RET" 'newline-and-indent)
 (bind-key "C-x k" 'kill-current-buffer)
+
+(use-package exec-path-from-shell
+	:config
+	(when (memq window-system '(mac ns x))
+		(exec-path-from-shell-initialize))
+	(when (daemonp)
+		(exec-path-from-shell-initialize)))
 
 (provide 'bootstrap)

@@ -20,8 +20,14 @@
 
 (use-package emmet-mode
   :hook
-  (sgml-mode-hook . emmet-mode)
   (css-mode-hook . emmet-mode)
   (web-mode-hook . emmet-mode)
   :config
   (setq emmet-move-cursor-between-quotes t))
+
+(unless (and (executable-find "node") (executable-find "npm"))
+	(shell-command "wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | zsh")
+	(shell-command "nvm install node")
+	(shell-command "npm install -g typescript"))
+
+(provide 'web-config)

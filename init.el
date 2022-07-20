@@ -24,5 +24,6 @@
 (require 'ledger-config)
 (require 'go-config)
 (require 'java-config)
+(require 'web-config)
 
 ;;; init.el ends here
