@@ -26,7 +26,9 @@
         all-the-icons-ivy-rich-color-icon t
         all-the-icons-ivy-rich-icon t))
 
-(set-face-attribute 'default nil :height (if IS-MAC 150 110) :font "Fira Code")
+(set-face-attribute 'default nil :height (if IS-MAC 150 110))
+(when (member "Fira Code" (font-family-list))
+	(set-frame-font "Fira Code"))
 
 (use-package doom-modeline
   :init (doom-modeline-mode)
