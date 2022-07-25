@@ -36,6 +36,8 @@
 (column-number-mode t)
 (global-hl-line-mode t)
 
+(setq-default frame-title-format '("%b [%m]"))
+
 (setq-default
  tab-always-indent 'complete
  tab-width 2)
