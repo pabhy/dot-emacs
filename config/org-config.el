@@ -55,7 +55,8 @@
 
 (use-package org-roam
   :init
-  (setq org-roam-directory ORG-ROAM-DIR)
+  (setq org-roam-directory ORG-ROAM-DIR
+				org-roam-db-location ORG-ROAM-DB)
   :config
   (org-roam-db-autosync-mode))
 

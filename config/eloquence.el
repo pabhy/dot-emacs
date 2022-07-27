@@ -24,7 +24,7 @@
                       org-tag
                       org-verbatim))
               (spell-fu-mode)))
-  (global-spell-fu-mode))
+	:hook (tex-mode . spell-fu-mode))
 
 (use-package define-word
   :bind ("C-c w" . define-word-at-point))

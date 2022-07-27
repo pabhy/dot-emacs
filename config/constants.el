@@ -18,6 +18,15 @@
 (unless (file-directory-p SPELL-FU-DIR)
   (make-directory SPELL-FU-DIR))
 
+(defconst ECLIPSE-DIR-NAME "eclipse.jdt.ls/")
+(defconst ECLIPSE-DIR (expand-file-name (concat CUSTOM-DIR ECLIPSE-DIR-NAME)))
+(unless (file-directory-p ECLIPSE-DIR)
+  (make-directory ECLIPSE-DIR))
+(defconst JAVA-WORKSPACE-DIR-NAME "workspace/")
+(defconst JAVA-WORKSPACE-DIR (expand-file-name (concat CUSTOM-DIR JAVA-WORKSPACE-DIR-NAME)))
+(unless (file-directory-p JAVA-WORKSPACE-DIR)
+  (make-directory JAVA-WORKSPACE-DIR))
+
 (defconst LSP-CACHE-DIR-NAME ".cache/")
 (defconst LSP-CACHE-DIR (expand-file-name (concat CUSTOM-DIR LSP-CACHE-DIR-NAME)))
 (unless (file-directory-p LSP-CACHE-DIR)
@@ -39,6 +48,7 @@
 (defconst ORG-ROAM-DIR (expand-file-name (concat ORG-DIR ORG-ROAM-DIR-NAME)))
 (unless (file-directory-p ORG-ROAM-DIR)
   (make-directory ORG-ROAM-DIR))
+(defconst ORG-ROAM-DB (expand-file-name "org-roam.db" ORG-ROAM-DIR))
 
 (defconst CUSTOM-FILE (expand-file-name "custom-file.el" CUSTOM-DIR))
 (defconst RECENTF-FILE (expand-file-name "recentf" CUSTOM-DIR))

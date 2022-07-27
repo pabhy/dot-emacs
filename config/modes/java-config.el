@@ -6,6 +6,9 @@
 
 ;;; Code:
 (use-package lsp-java
+	:init
+	(setq lsp-java-server-install-dir ECLIPSE-DIR
+				lsp-java-workspace-dir JAVA-WORKSPACE-DIR)
 	:hook (java-mode . lsp-deferred))
 
 ;; (use-package dap-java
