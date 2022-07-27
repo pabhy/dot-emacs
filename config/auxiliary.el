@@ -19,11 +19,11 @@
 (defvar pratik/accounting-directory "~/accounting")
 (defvar pratik/accounting-ledgers-directory "ledgers/")
 (defvar pratik/accounting-reports-directory "reports/")
-(pratik/add-file-keybinding "C-c z l"(expand-file-name
-																			(concat (format-time-string "%Y/")
-																							pratik/accounting-ledgers-directory
-																							(downcase (format-time-string "%B.ledger")))
-																			pratik/accounting-directory) "Ledger")
+(pratik/add-file-keybinding "C-c z l" (expand-file-name
+																			 (concat (format-time-string "%Y/")
+																							 pratik/accounting-ledgers-directory
+																							 (downcase (format-time-string "%B.ledger")))
+																			 pratik/accounting-directory) "Ledger")
 
 (provide 'auxiliary)
 ;;; auxiliary.el ends here
