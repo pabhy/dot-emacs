@@ -40,6 +40,8 @@
 
 (setq-default
  tab-always-indent 'complete
+ indent-tabs-mode nil
+ indent-line-function 'insert-tab
  tab-width 2)
 
 (setq-default
