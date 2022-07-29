@@ -35,7 +35,10 @@
   :config
   (setq doom-modeline-enable-word-count t
         doom-modeline-indent-info t
-				doom-modeline-height 15))
+				doom-modeline-height 15)
+  (doom-modeline-def-modeline 'main
+    '(bar matches buffer-info remote-host buffer-position parrot selection-info)
+    '(misc-info minor-modes word-count battery lsp checker indent-info input-method buffer-encoding major-mode process vcs "  ")))
 
 (straight-use-package
  '(solarized-emacs :type git :host github :repo "bbatsov/solarized-emacs"))

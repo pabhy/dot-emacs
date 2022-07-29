@@ -36,6 +36,9 @@
 (column-number-mode t)
 (global-hl-line-mode t)
 
+(display-battery-mode)
+(display-time-mode)
+
 (setq-default frame-title-format '("%b [%m]"))
 
 (setq-default
