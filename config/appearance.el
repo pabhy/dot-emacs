@@ -8,7 +8,8 @@
   :config
   (unless (member "all-the-icons" (font-family-list))
     (all-the-icons-install-fonts t))
-  (setq inhibit-compacting-font-caches t))
+  (setq inhibit-compacting-font-caches t
+        all-the-icons-scale-factor 1.1))
 
 (use-package all-the-icons-ibuffer
   :hook (ibuffer-mode . all-the-icons-ibuffer-mode)
@@ -38,10 +39,11 @@
 				doom-modeline-height 15)
   (doom-modeline-def-modeline 'main
     '(bar matches buffer-info remote-host buffer-position parrot selection-info)
-    '(misc-info minor-modes word-count battery lsp checker indent-info input-method buffer-encoding major-mode process vcs "  ")))
+    '(misc-info minor-modes word-count battery lsp indent-info input-method buffer-encoding major-mode process vcs checker "  ")))
 
+;; I have tweaked the original version and use my own forked version of Solarized theme.
 (straight-use-package
- '(solarized-emacs :type git :host github :repo "bbatsov/solarized-emacs"))
+ '(solarized-emacs :type git :host github :repo "pratik-abhyankar/solarized-emacs"))
 (require 'solarized)
 (setq
  x-underline-at-descent-line nil
