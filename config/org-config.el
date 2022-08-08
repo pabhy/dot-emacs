@@ -20,6 +20,8 @@
  org-agenda-skip-scheduled-if-done t       ;; No need to honor schedule if the task is already done
  org-agenda-block-separator)               ;; Add a line to separate agenda items in dinstint sections
 
+(setq org-archive-location ORG-ARCHIVE-LOC)
+
 (setq org-todo-keywords
       '((sequence "ASSIGNED(a)"
                   "IMPLEMENTATION(i)"

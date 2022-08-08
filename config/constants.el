@@ -44,6 +44,7 @@
 (defconst ORG-DIR "~/org/")
 (unless (file-directory-p ORG-DIR)
   (make-directory ORG-DIR))
+(defconst ORG-ARCHIVE-LOC (concat ORG-DIR "archive/" "%s_archive::"))
 (defconst ORG-ROAM-DIR-NAME "roam/")
 (defconst ORG-ROAM-DIR (expand-file-name (concat ORG-DIR ORG-ROAM-DIR-NAME)))
 (unless (file-directory-p ORG-ROAM-DIR)
