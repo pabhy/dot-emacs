@@ -48,7 +48,6 @@
   :bind("C-x C-r" . recentf-open-files))
 
 (use-package amx
-  :ensure t
   :config
   (setq amx-save-file AMX-ITEMS-FILE)
   (amx-mode t))
@@ -61,10 +60,27 @@
          ("C-n" . company-select-next)
          ("C-p" . company-select-previous))
   :config
-  (setq company-ide-delay 0.05)
-  (setq company-backends '((company-capf company-files company-yasnippet)))
-  (setq company-minimum-prefix-length 1)
+  (setq company-ide-delay 0.05
+        company-minimum-prefix-length 1)
+  (setq company-backends '((company-capf company-yasnippet company-dabbrev company-files)))
+  (setq company-dabbrev-minimum-length 2
+        company-dabbrev-other-buffers nil
+        company-dabbrev-ignore-case t)
+  (setq company-files-exclusions '(".git/" ".DS_Store"))
+  (setq company-transformers '(delete-consecutive-dups
+                             company-sort-by-occurrence))
   (global-company-mode t))
+
+(use-package company-quickhelp
+  :after company
+  :init
+  (setq company-quickhelp-delay 0.1)
+  :config
+  (company-quickhelp-mode))
+
+(use-package company-statistics
+  :config
+  (company-statistics-mode))
 
 (use-package ibuffer
   :bind ("C-x C-b" . ibuffer))
