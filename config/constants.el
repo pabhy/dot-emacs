@@ -52,6 +52,7 @@
 (defconst ORG-ROAM-DB (expand-file-name "org-roam.db" ORG-ROAM-DIR))
 
 (defconst CUSTOM-FILE (expand-file-name "custom-file.el" CUSTOM-DIR))
+(defconst COMPANY-STATISTICS-CACHE-FILE (expand-file-name "company-statistics-cache.el" CUSTOM-DIR))
 (defconst RECENTF-FILE (expand-file-name "recentf" CUSTOM-DIR))
 (defconst AMX-ITEMS-FILE (expand-file-name "amx-items" CUSTOM-DIR))
 (defconst PROJECTILE-BOOKMARKS-FILE (expand-file-name "projectile-bookmarks.eld" CUSTOM-DIR))

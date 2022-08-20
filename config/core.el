@@ -79,6 +79,8 @@
   (company-quickhelp-mode))
 
 (use-package company-statistics
+  :init
+  (setq company-statistics-file COMPANY-STATISTICS-CACHE-FILE)
   :config
   (company-statistics-mode))
 

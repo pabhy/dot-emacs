@@ -62,3 +62,4 @@
 (bind-key "C-x c" 'toggle-dark-light-theme)
 
 (provide 'appearance)
+;;; appearance.el ends here.
