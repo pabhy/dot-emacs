@@ -31,6 +31,16 @@
 (when (member "Fira Code" (font-family-list))
 	(set-frame-font "Fira Code"))
 
+(use-package doom-themes
+  :config
+  (setq doom-themes-enable-bold t
+        doom-themes-enable-italic t)
+  (load-theme 'doom-vibrant t)
+  (doom-themes-visual-bell-config)
+  (setq doom-themes-treemacs-theme "doom-atom")
+  (doom-themes-treemacs-config)
+  (doom-themes-org-config))
+
 (use-package doom-modeline
   :init (doom-modeline-mode)
   :config
@@ -42,23 +52,23 @@
     '(misc-info minor-modes word-count battery lsp indent-info input-method buffer-encoding major-mode process vcs checker "  ")))
 
 ;; I have tweaked the original version and use my own forked version of Solarized theme.
-(straight-use-package
- '(solarized-emacs :type git :host github :repo "pratik-abhyankar/solarized-emacs"))
-(require 'solarized)
-(setq
- x-underline-at-descent-line nil
- solarized-scale-markdown-headlines t
- solarized-use-variable-pitch nil)
-(load-theme 'solarized-light-high-contrast t)
+;; (straight-use-package
+;;  '(solarized-emacs :type git :host github :repo "pratik-abhyankar/solarized-emacs"))
+;; (require 'solarized)
+;; (setq
+;;  x-underline-at-descent-line nil
+;;  solarized-scale-markdown-headlines t
+;;  solarized-use-variable-pitch nil)
+;; (load-theme 'solarized-light-high-contrast t)
 
-(setq active-theme 'solarized-light-high-contrast)
-(defun toggle-dark-light-theme ()
-  "Toggle between dark and light mode theme."
-  (interactive)
-  (if (eq active-theme 'solarized-light-high-contrast)
-      (setq active-theme 'solarized-dark-high-contrast)
-    (setq active-theme 'solarized-light-high-contrast))
-  (load-theme active-theme t))
-(bind-key "C-x c" 'toggle-dark-light-theme)
+;; (setq active-theme 'solarized-light-high-contrast)
+;; (defun toggle-dark-light-theme ()
+;;   "Toggle between dark and light mode theme."
+;;   (interactive)
+;;   (if (eq active-theme 'solarized-light-high-contrast)
+;;       (setq active-theme 'solarized-dark-high-contrast)
+;;     (setq active-theme 'solarized-light-high-contrast))
+;;   (load-theme active-theme t))
+;; (bind-key "C-x c" 'toggle-dark-light-theme)
 
 (provide 'appearance)

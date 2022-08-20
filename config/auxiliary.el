@@ -1,4 +1,6 @@
 ;;; auxiliary.el --- Loads my custom helper functions -*- lexical-binding: t; -*-
+;;; Commentary:
+;;; Code:
 
 ;; Define a helper function to assign shortcut keys to 'find-file' frequently
 ;; used files. I use this to open this 'init.el' and other daily used 'org' files.
@@ -11,8 +13,8 @@
 		(global-set-key (kbd key) (lambda () (interactive) (find-file file)))
 		(which-key-add-key-based-replacements key (or desc file))))
 
-(pratik/add-file-keybinding "C-c z d" (expand-file-name "diet.org" org-directory) "Diet Tracker")
-(pratik/add-file-keybinding "C-c z r" (expand-file-name "reading-list.org" org-directory) "Reading List")
+(pratik/add-file-keybinding "C-c z r" (expand-file-name "personal/reading-list.org" org-directory) "Reading List")
+(pratik/add-file-keybinding "C-c z g" (expand-file-name "personal/grooming.org" org-directory) "Grooming")
 
 ;; Automatically creates a new ledger file every month, and a ledger directory
 ;; every new year and assigns a hotkey binding to open the current ledger file.

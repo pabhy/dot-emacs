@@ -62,7 +62,7 @@
          ("C-p" . company-select-previous))
   :config
   (setq company-ide-delay 0.05)
-  (setq company-backends '(company-capf company-files company-yasnippet))
+  (setq company-backends '((company-capf company-files company-yasnippet)))
   (setq company-minimum-prefix-length 1)
   (global-company-mode t))
 
