@@ -53,11 +53,6 @@
 (use-package markdown-mode
   :mode ("README\\.md\\'" . gfm-mode)
   :config
-  (unless (executable-find "pandoc")
-    (when IS-LINUX
-      (async-shell-command "sudo -S apt install pandoc"))
-    (when IS-MAC
-      (async-shell-command "brew install pandoc")))
   (setq markdown-command "pandoc"))
 
 (provide 'doc-config)

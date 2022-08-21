@@ -9,14 +9,10 @@
 
 
 ;;; Commentary:
-
+;; Ledger is a double entry accounting system, and 'ledger-mode' ports it to
+;; Emacs.
 
 ;;; Code:
-(unless (executable-find "ledger")
-  (when IS-LINUX
-    (async-shell-command "sudo -S apt install ledger"))
-  (when IS-MAC
-    (async-shell-command "brew install ledger")))
 (use-package ledger-mode
   :init
   (setq ledger-clear-whole-transactions t))

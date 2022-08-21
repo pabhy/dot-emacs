@@ -91,11 +91,7 @@
 (use-package dap-mode
 	:config (dap-auto-configure-mode))
 
-(unless (and (executable-find "cmake") (executable-find "libtool"))
-  (when IS-LINUX
-    (async-shell-command "sudo -S apt install cmake libtool libtool-bin"))
-  (when IS-MAC
-    (async-shell-command "brew install cmake libtool libtool-bin")))
+;; Best intergrated terminal emulator for Emacs.
 (use-package vterm)
 
 ;; Snippets and templates for code block completions.
