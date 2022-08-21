@@ -68,7 +68,8 @@
   :init (doom-modeline-mode)
   :config
   (setq doom-modeline-enable-word-count t
-        doom-modeline-indent-info t)
+        doom-modeline-indent-info t
+        doom-modeline-height 30)
   (doom-modeline-def-modeline 'main
     '(bar matches buffer-info remote-host buffer-position parrot selection-info)
     '(misc-info minor-modes word-count battery lsp indent-info input-method buffer-encoding major-mode process vcs checker "  ")))
