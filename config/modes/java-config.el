@@ -1,8 +1,15 @@
-;;; java-config.el -- Loads Java Config in Emacs
+;;; java-config.el --- Java mode config -*- lexical-binding: t -*-
+
+;; Author: Pratik Abhyankar
+;; Maintainer: Pratik Abhyankar
+;; Version: 1.0
+;; Package-Requires: (dependencies)
+;; Homepage: homepage
+;; Keywords: java, java-mode, java-config
+
 
 ;;; Commentary:
-;; Created On: 12 July 2022
-;; Author: Pratik Abhyankar
+
 
 ;;; Code:
 (use-package lsp-java
@@ -18,4 +25,4 @@
 ;; 				 ("<f9>" . dap-continue)))
 
 (provide 'java-config)
-;;; java-config.el ends here
+;;; java-config.el ends here.

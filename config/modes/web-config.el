@@ -1,3 +1,20 @@
+;;; web-config.el --- Web development config for Emacs -*- lexical-binding: t -*-
+
+;; Author: Pratik Abhyankar
+;; Maintainer: Pratik Abhyankar
+;; Version: 1.0
+;; Package-Requires: (dependencies)
+;; Homepage: homepage
+;; Keywords: web, js, javascript, jsx, vue, react, svelte, json, html, css, emmet
+
+
+;;; Commentary:
+;; This file adds web development related config to Emacs. Completion, font
+;; locking, indentation and formatting for most of the web languages and
+;; frameworks is efficiently handled by the the 'web-mode' package. This file
+;; also adds 'emmet' and 'json' modes to Emacs.
+
+;;; Code:
 (use-package web-mode
   :config
   (add-to-list 'auto-mode-alist '("\\.svelte?\\'" . web-mode))
@@ -31,3 +48,4 @@
 	(shell-command "npm install -g typescript"))
 
 (provide 'web-config)
+;;; web-config.el ends here.

@@ -1,10 +1,13 @@
-;;; auxiliary.el --- Loads my custom helper functions -*- lexical-binding: t; -*-
+;;; auxiliary.el --- Personalized helper functions -*- lexical-binding: t; -*-
+
 ;;; Commentary:
+;; Loads my personalized helper functions to streamline my workflow in Emacs.
+
 ;;; Code:
 
 ;; Define a helper function to assign shortcut keys to 'find-file' frequently
-;; used files. I use this to open this 'init.el' and other daily used 'org' files.
-;; Adapted from https://zzamboni.org blog.
+;; used files. I use this to open this 'init.el' and other daily used 'org'
+;; files. Adapted from https://zzamboni.org blog.
 (defun pratik/add-file-keybinding (key file desc)
 	"Assign KEY as binding to open FILE represented by an optional DESC."
 	(let ((key key)
@@ -15,6 +18,10 @@
 
 (pratik/add-file-keybinding "C-c z r" (expand-file-name "personal/reading-list.org" org-directory) "Reading List")
 (pratik/add-file-keybinding "C-c z g" (expand-file-name "personal/grooming.org" org-directory) "Grooming")
+(pratik/add-file-keybinding "C-c z i" (expand-file-name "personal/ideas.org" org-directory) "Ideas")
+(pratik/add-file-keybinding "C-c z p" (expand-file-name "personal/personal.org" org-directory) "Personal")
+(pratik/add-file-keybinding "C-c z w" (expand-file-name "work/work.org" org-directory) "Work")
+(pratik/add-file-keybinding "C-c z f" (expand-file-name "work/feedback.org" org-directory) "Feedback")
 
 ;; Automatically creates a new ledger file every month, and a ledger directory
 ;; every new year and assigns a hotkey binding to open the current ledger file.
@@ -28,4 +35,4 @@
 																			 pratik/accounting-directory) "Ledger")
 
 (provide 'auxiliary)
-;;; auxiliary.el ends here
+;;; auxiliary.el ends here.

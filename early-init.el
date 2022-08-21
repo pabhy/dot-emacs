@@ -1,9 +1,16 @@
-;;; early-init.el --- Declares early init config for Emacs -*- lexical-binding: t -*-
-
-;;; Commentary:
+;;; early-init.el --- Early init load config for Emacs -*- lexical-binding: t -*-
 
 ;; Author: Pratik Abhyankar
-;; Created: May 29 2022
+;; Maintainer: Pratik Abhyankar
+;; Version: 1.0
+;; Package-Requires: (dependencies)
+;; Homepage: homepage
+;; Keywords: early-init, early-init.el
+
+
+;;; Commentary:
+;; Loads the early-init config for Emacs. Primarily used to disable package.el
+;; since the config uses straigh.el to manage Emacs packages.
 
 ;;; Code:
 
@@ -11,4 +18,4 @@
 (setq package-enable-at-startup nil)
 
 (provide 'early-init)
-;;; early-init.el ends here
+;;; early-init.el ends here.

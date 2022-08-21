@@ -1,3 +1,17 @@
+;;; doc-config.el --- Documentation config for Emacs' -*- lexical-binding: t -*-
+
+;; Author: Pratik Abhyankar
+;; Maintainer: Pratik Abhyankar
+;; Version: 1.0
+;; Package-Requires: (dependencies)
+;; Homepage: homepage
+;; Keywords: doc, documentation, markdown, pdf, spellcheck
+
+;;; Commentary:
+;; Adds doc reading and writing capabilities to Emacs.
+
+
+;;; Code:
 (when IS-MAC
   (unless (executable-find "aspell")
     (async-shell-command "brew install aspell")))
@@ -46,4 +60,5 @@
       (async-shell-command "brew install pandoc")))
   (setq markdown-command "pandoc"))
 
-(provide 'eloquence)
+(provide 'doc-config)
+;;; doc-config.el ends here

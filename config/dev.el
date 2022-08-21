@@ -1,3 +1,21 @@
+;;; dev.el --- Development config for Emacs -*- lexical-binding: t -*-
+
+;; Author: Pratik Abhyankar
+;; Maintainer: Pratik Abhyankar
+;; Version: 1.0
+;; Package-Requires: (dependencies)
+;; Homepage: homepage
+;; Keywords: dev, coding, editor, version control, project manager
+
+
+;;; Commentary:
+;; Adds a project manager, version control and other code editor features to
+;; Emacs which makes it closer to being an IDE.
+
+
+;;; Code:
+
+;; Best version control tool out there.
 (use-package magit
   :bind ("C-x g" . magit-status))
 
@@ -10,6 +28,7 @@
   :config
   (global-git-gutter-mode t))
 
+;; Project manager for Emacs.
 (use-package projectile
   :config
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
@@ -26,6 +45,7 @@
   :config
   (counsel-projectile-mode t))
 
+;; IDE like sidebar.
 (use-package treemacs
   :config
   (treemacs-project-follow-mode t)
@@ -43,6 +63,7 @@
 (use-package treemacs-magit
   :after treemacs magit)
 
+;; Language server protocol for languages to make Emacs IDE-like.
 (use-package lsp-mode
   :init
   (setq lsp-server-install-dir LSP-DIR)
@@ -77,6 +98,7 @@
     (async-shell-command "brew install cmake libtool libtool-bin")))
 (use-package vterm)
 
+;; Snippets and templates for code block completions.
 (use-package yasnippet
   :init
   :config
@@ -88,3 +110,4 @@
   (add-to-list 'yas-snippet-dirs yasnippet-snippets-dir))
 
 (provide 'dev)
+;;; dev.el ends here.

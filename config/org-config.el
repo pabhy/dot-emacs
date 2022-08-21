@@ -1,3 +1,17 @@
+;;; org-config.el --- Org-mode config for Emacs -*- lexical-binding: t -*-
+
+;; Author: Pratik Abhyankar
+;; Maintainer: Pratik Abhyankar
+;; Version: 1.0
+;; Package-Requires: (dependencies)
+;; Homepage: homepage
+;; Keywords: org, org-mode
+
+
+;;; Commentary:
+
+
+;;; Code:
 (setq org-directory ORG-DIR)
 
 (setq-default
@@ -47,6 +61,7 @@
   :config
   (org-superstar-mode t))
 
+;; A nice package for maintaining a memoir.
 (use-package org-journal
   :init
   (setq org-journal-prefix-key "C-c j")
@@ -55,6 +70,7 @@
         org-journal-file-type 'daily
         org-journal-date-format "%A, %d %B %Y"))
 
+;; Organize and track learning and store things with org-mode.
 (use-package org-roam
   :init
   (setq org-roam-directory ORG-ROAM-DIR
@@ -64,6 +80,7 @@
 
 (bind-key "C-c a" 'org-agenda)
 (bind-key "C-c c" 'org-capture)
-(bind-key "C-c i b" 'org-indent-block)     ;; Handy keybinding to indent my 'org-blocks' in config
+(bind-key "C-c i b" 'org-indent-block)
 
 (provide 'org-config)
+;;; org-config.el ends here.

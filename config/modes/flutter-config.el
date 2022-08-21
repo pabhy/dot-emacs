@@ -1,3 +1,17 @@
+;;; flutter-config.el --- Flutter and Dart mode config -*- lexical-binding: t -*-
+
+;; Author: Pratik Abhyankar
+;; Maintainer: Pratik Abhyankar
+;; Version: 1.0
+;; Package-Requires: (dependencies)
+;; Homepage: homepage
+;; Keywords: flutter, dart, flutter-mode, dart-mode
+
+
+;;; Commentary:
+
+
+;;; Code:
 (use-package dart-mode
   :custom
   (dart-format-on-save t))
@@ -16,3 +30,4 @@
   (setq lsp-dart-show-flutter-outline t))
 
 (provide 'flutter-config)
+;;; flutter-config.el ends here.

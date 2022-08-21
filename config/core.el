@@ -1,3 +1,20 @@
+;;; core.el --- Code Emacs config -*- lexical-binding: t -*-
+
+;; Author: Pratik Abhyankar
+;; Maintainer: Pratik Abhyankar
+;; Version: 1.0
+;; Package-Requires: (dependencies)
+;; Homepage: homepage
+;; Keywords: core, company, completion, ivy, ibuffer
+
+
+;;; Commentary:
+;; Adds core functionalities to Emacs which makes it so good. Better completion,
+;; search and window management.
+
+;;; Code:
+
+;; Prompts the next possible keystroke after a prefix key.
 (use-package which-key
   :ensure t
   :config
@@ -8,6 +25,7 @@
         which-key-idle-secondary-delay 0.05)
   (which-key-mode))
 
+;; Improve Emacs minibuffer completion and search.
 (use-package ivy
   :config
   (ivy-mode t)
@@ -39,6 +57,7 @@
   :config
   (ivy-rich-mode t))
 
+;; Remembers the most receently opened files.
 (use-package recentf
   :config
   (setq recentf-auto-cleanup 'never
@@ -47,11 +66,13 @@
   (recentf-mode t)
   :bind("C-x C-r" . recentf-open-files))
 
+;; Show most recently used functions at the top.
 (use-package amx
   :config
   (setq amx-save-file AMX-ITEMS-FILE)
   (amx-mode t))
 
+;; Heart of Emacs. Completion framework for Emacs.
 (use-package company
   :bind (:map
          global-map
@@ -84,6 +105,7 @@
   :config
   (company-statistics-mode))
 
+;; Better buffer and window management
 (use-package ibuffer
   :bind ("C-x C-b" . ibuffer))
 (require 'ibuf-ext)
@@ -115,3 +137,4 @@
          ("C-:" . avy-goto-line)))
 
 (provide 'core)
+;;; core.el ends here.
