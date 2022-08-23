@@ -84,5 +84,25 @@
   (load-theme active-theme t))
 (bind-key "C-x c" 'toggle-dark-light-theme)
 
+(use-package page-break-lines
+  :config (page-break-lines-mode))
+
+(use-package dashboard
+  :init
+  (setq dashboard-banner-logo-title (format "%s's Emacs!" (capitalize user-login-name))
+        dashboard-startup-banner 'logo
+        dashboard-center-content t
+        dashboard-items '((agenda . 5)
+                          (recents . 5)
+                          (projects . 10)
+                          (bookmarks . 5)
+                          (registers . 5))
+        dashboard-set-heading-icons t
+        dashboard-set-file-icons t
+        dashboard-set-navigator t
+        dashboard-set-init-info t)
+  :config
+  (dashboard-setup-startup-hook))
+
 (provide 'appearance)
-;;; appearance.el ends here.
+;;; appearance.el ends here

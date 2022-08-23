@@ -24,9 +24,9 @@
 ;; Load core and language agnostic Emacs configs.
 (require 'constants)
 (require 'bootstrap)
-(require 'appearance)
 (require 'core)
 (require 'dev)
+(require 'appearance)
 (require 'doc-config)
 (require 'org-config)
 (require 'auxiliary)
@@ -40,4 +40,4 @@
 (require 'web-config)
 
 (provide 'init)
-;;; init.el ends here.
+;;; init.el ends here
