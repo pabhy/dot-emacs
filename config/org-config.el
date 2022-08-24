@@ -34,6 +34,8 @@
  org-agenda-skip-scheduled-if-done t       ;; No need to honor schedule if the task is already done
  org-agenda-block-separator)               ;; Add a line to separate agenda items in dinstint sections
 
+(setq-default org-agenda-files (list WORK-ORG-FILE PERSONAL-ORG-FILE))
+
 (setq org-archive-location ORG-ARCHIVE-LOC)
 
 (setq org-todo-keywords
@@ -48,14 +50,14 @@
                   "DONE(d)")))
 
 (setq org-todo-keyword-faces
-      '(("ASSIGNED" . "#dc322f")
-        ("IMPLEMENTATION" . "#b58900")
-        ("BLOCKED" . "#cb4b16")
-        ("WAITING" . "#cb4b16")
-        ("REVIEW" . "#2aa198")
-        ("RELEASE" . "#268bd2")
-        ("DELEGATED" . "#859900")
-        ("DONE" . "#859900")))
+      '(("ASSIGNED" . "#c9b4cf")
+        ("IMPLEMENTATION" . "#f0c674")
+        ("BLOCKED" . "#cc6666")
+        ("WAITING" . "#dd9955")
+        ("REVIEW" . "#81a2be")
+        ("RELEASE" . "#8abeb7")
+        ("DELEGATED" . "#5a5a5a")
+        ("DONE" . "#b5bd68")))
 
 (use-package org-superstar
   :config
