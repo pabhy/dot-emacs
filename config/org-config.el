@@ -61,7 +61,7 @@
 
 (use-package org-superstar
   :config
-  (org-superstar-mode t))
+  (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1))))
 
 ;; A nice package for maintaining a memoir.
 (use-package org-journal
@@ -85,4 +85,4 @@
 (bind-key "C-c i b" 'org-indent-block)
 
 (provide 'org-config)
-;;; org-config.el ends here.
+;;; org-config.el ends here

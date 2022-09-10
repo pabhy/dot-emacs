@@ -30,8 +30,11 @@
 
 ;; Project manager for Emacs.
 (use-package projectile
+  :bind-keymap
+  ("C-c p" . projectile-command-map)
+  :init
+  (setq projectile-switch-project-action #'projectile-dired)
   :config
-  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   (setq projectile-completion-system 'ivy)
   (setq projectile-cache-file PROJECTILE-BOOKMARKS-FILE
         projectile-known-projects-file PROJECTILE-KNOWN-PROJECTS-FILE)
@@ -106,4 +109,4 @@
   (add-to-list 'yas-snippet-dirs yasnippet-snippets-dir))
 
 (provide 'dev)
-;;; dev.el ends here.
+;;; dev.el ends here
