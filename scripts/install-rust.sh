@@ -14,7 +14,7 @@ GREEN="\033[0;32m"
 NC="\033[0m"
 
 install_rust() {
-    if [ -x "$(command -v rustc)" ]
+    if ! [ -x "$(command -v rustc)" ]
     then
         echo "\n${ORANGE}Installing Rust: ${NC}\n"
         curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -23,4 +23,5 @@ install_rust() {
     fi
 }
 
+# Entry point
 install_rust

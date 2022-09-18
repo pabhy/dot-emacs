@@ -42,10 +42,7 @@
   :config
   (setq emmet-move-cursor-between-quotes t))
 
-(unless (and (executable-find "node") (executable-find "npm"))
-	(shell-command "wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | zsh")
-	(shell-command "nvm install node")
-	(shell-command "npm install -g typescript"))
+(use-package json-mode)
 
 (provide 'web-config)
 ;;; web-config.el ends here.

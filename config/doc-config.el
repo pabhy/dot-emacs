@@ -12,10 +12,6 @@
 
 
 ;;; Code:
-(when IS-MAC
-  (unless (executable-find "aspell")
-    (async-shell-command "brew install aspell")))
-
 (use-package spell-fu
   :config
   (setq spell-fu-directory SPELL-FU-DIR)

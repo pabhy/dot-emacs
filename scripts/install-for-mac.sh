@@ -18,6 +18,7 @@ NC="\033[0m"
 
 PACKAGES=(
     curl
+    aspell
     pandoc
     cmake
     libtool
