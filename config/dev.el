@@ -92,6 +92,8 @@
   :commands lsp-ivy-workspace-symbol)
 
 (use-package dap-mode
+  :init
+  (setq dap-breakpoints-file DAP-BREAKPOINTS-FILE)
 	:config (dap-auto-configure-mode))
 
 ;; Best intergrated terminal emulator for Emacs.

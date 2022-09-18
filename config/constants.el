@@ -1,3 +1,18 @@
+;;; constants.el --- Defines all required constants for the Emacs config -*- lexical-binding: t -*-
+
+;; Author: Pratik Abhyankar
+;; Maintainer: Pratik Abhyankar
+;; Version: 1.0
+;; Package-Requires: (dependencies)
+;; Homepage: homepage
+;; Keywords: constants
+
+;;; Commentary:
+
+
+;;; Code:
+
+;; Define constants to identify system type
 (defconst NATIVECOMP (if (fboundp 'native-comp-available-p) (native-comp-available-p)))
 (defconst EMACS28+   (> emacs-major-version 27))
 (defconst EMACS29+   (> emacs-major-version 28))
@@ -6,6 +21,7 @@
 (defconst IS-WINDOWS (memq system-type '(cygwin windows-nt ms-dos)))
 (defconst IS-BSD     (or IS-MAC (eq system-type 'berkeley-unix)))
 
+;; Define file and directory path constants.
 (defconst CONFIG-DIR-NAME "config/")
 
 (defconst CUSTOM-DIR-NAME "custom/")
@@ -63,5 +79,7 @@
 (defconst TRANSIENT-VALUES-FILE (expand-file-name "values.el" CUSTOM-DIR))
 (defconst TRANSIENT-LEVELS-FILE (expand-file-name "levels.el" CUSTOM-DIR))
 (defconst LSP-SESSION-FILE (expand-file-name ".lsp-session-v1" CUSTOM-DIR))
+(defconst DAP-BREAKPOINTS-FILE (expand-file-name ".dap-breakpoints" CUSTOM-DIR))
 
 (provide 'constants)
+;;; constants.el ends here
