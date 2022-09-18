@@ -86,11 +86,7 @@
 (set-frame-parameter (selected-frame) 'buffer-predicate
                      (lambda (buf) (not (string-match-p "^*" (buffer-name buf)))))
 
-(setq user-full-name "Pratik Abhyankar")
-(setq user-mail-address "abhyankar.pratik.5@gmail.com")
-
-(server-start)
-
+;; Better default keybindings for better buffer management.
 (bind-key "M-[" 'previous-buffer)
 (bind-key "M-]" 'next-buffer)
 (bind-key "M-o" 'other-window)
@@ -105,6 +101,8 @@
 		(exec-path-from-shell-initialize))
 	(when (daemonp)
 		(exec-path-from-shell-initialize)))
+
+(server-start)
 
 (provide 'bootstrap)
 ;;; bootstrap.el ends here.
