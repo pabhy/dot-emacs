@@ -15,15 +15,22 @@
 
 ;;; Code:
 
-;; Define a user's config file with default name and path.
-(defvar user-config-file (expand-file-name "config/user-config.el" user-emacs-directory)
-  "The user's config file.")
+;; Define 'config', 'config/modes/' and 'custom' directory constants required
+;; for this config.
+(defconst CONFIG-DIR (expand-file-name "config/" user-emacs-directory))
+(defconst MODES-DIR (expand-file-name "modes/" CONFIG-DIR))
+(defconst CUSTOM-DIR (expand-file-name "custom/" user-emacs-directory))
 
 ;; Add 'config/' and 'config/modes/' directories to load path.
-(add-to-list 'load-path (expand-file-name "config/" user-emacs-directory))
-(add-to-list 'load-path (expand-file-name "config/modes/" user-emacs-directory))
+(add-to-list 'load-path CONFIG-DIR)
+(add-to-list 'load-path MODES-DIR)
+
+;; Define a user's config file with a default name and path.
+(defvar user-config-file (expand-file-name "user-config.el" CONFIG-DIR)
+  "User's custom Emacs config file.")
 
 ;; Load core and language agnostic Emacs configs.
+(require 'auxiliary)
 (require 'constants)
 (require 'bootstrap)
 (require 'core)
@@ -31,7 +38,6 @@
 (require 'appearance)
 (require 'doc-config)
 (require 'org-config)
-(require 'auxiliary)
 
 ;; If the user config file exists, load it after Emacs editor is setup and
 ;; ready, before any modes are loaded.

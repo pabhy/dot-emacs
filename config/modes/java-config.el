@@ -14,8 +14,8 @@
 ;;; Code:
 (use-package lsp-java
 	:init
-	(setq lsp-java-server-install-dir ECLIPSE-DIR
-				lsp-java-workspace-dir JAVA-WORKSPACE-DIR)
+	(setq lsp-java-server-install-dir (pratik/create-custom-dir "eclipse.jdt.ls/")
+				lsp-java-workspace-dir (pratik/create-custom-dir "workspace/"))
 	:hook (java-mode . lsp-deferred))
 
 ;; (use-package dap-java

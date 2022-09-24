@@ -20,9 +20,9 @@
   :bind ("C-x g" . magit-status))
 
 (use-package transient
-  :config (setq transient-levels-file TRANSIENT-LEVELS-FILE
-                transient-values-file TRANSIENT-VALUES-FILE
-                transient-history-file TRANSIENT-HISTORY-FILE))
+  :config (setq transient-levels-file (pratik/set-custom-file "levels.el")
+                transient-values-file (pratik/set-custom-file "values.el")
+                transient-history-file (pratik/set-custom-file "history.el")))
 
 (use-package git-gutter
   :config
@@ -36,8 +36,8 @@
   (setq projectile-switch-project-action #'projectile-dired)
   :config
   (setq projectile-completion-system 'ivy)
-  (setq projectile-cache-file PROJECTILE-BOOKMARKS-FILE
-        projectile-known-projects-file PROJECTILE-KNOWN-PROJECTS-FILE)
+  (setq projectile-cache-file (pratik/set-custom-file "projectile-bookmarks.eld")
+        projectile-known-projects-file (pratik/set-custom-file "projectile-known-projects.eld"))
   (add-to-list 'projectile-project-root-files-bottom-up "pubspec.yaml")
   (add-to-list 'projectile-project-root-files-bottom-up "BUILD")
   (projectile-mode t))
@@ -69,8 +69,8 @@
 ;; Language server protocol for languages to make Emacs IDE-like.
 (use-package lsp-mode
   :init
-  (setq lsp-server-install-dir LSP-DIR)
-  (setq lsp-session-file LSP-SESSION-FILE)
+  (setq lsp-server-install-dir (pratik/create-custom-dir ".cache/lsp/"))
+  (setq lsp-session-file (pratik/set-custom-file ".lsp-session-v1"))
   :hook ((lsp-mode . lsp-enable-which-key-integration)
          (java-mode . lsp-deferred)
          (rust-mode . lsp-deferred)
@@ -93,7 +93,7 @@
 
 (use-package dap-mode
   :init
-  (setq dap-breakpoints-file DAP-BREAKPOINTS-FILE)
+  (setq dap-breakpoints-file (pratik/set-custom-file ".dap-breakpoints"))
 	:config (dap-auto-configure-mode))
 
 ;; Best intergrated terminal emulator for Emacs.
@@ -103,7 +103,7 @@
 (use-package yasnippet
   :init
   :config
-  (setq yas-snippet-dirs (list YASNIPPETS-DIR))
+  (setq yas-snippet-dirs (list (pratik/create-custom-dir "snippets/")))
   (yas-global-mode t))
 
 (use-package yasnippet-snippets

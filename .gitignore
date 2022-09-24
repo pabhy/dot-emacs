@@ -30,9 +30,11 @@ smex-items
 tramp
 transient/
 var/
-custom/
+custom/*
 straight/
 workspace/
+url/
+eshell/
 
 # compiled files
 *.elc

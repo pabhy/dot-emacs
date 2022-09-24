@@ -14,7 +14,7 @@
 ;;; Code:
 (use-package spell-fu
   :config
-  (setq spell-fu-directory SPELL-FU-DIR)
+  (setq spell-fu-directory (pratik/create-custom-dir "spell-fu"))
   (add-hook 'org-mode-hook
             (lambda ()
               (setq spell-fu-faces-exclude

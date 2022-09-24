@@ -16,5 +16,16 @@
 		(global-set-key (kbd key) (lambda () (interactive) (find-file file)))
 		(which-key-add-key-based-replacements key (or desc file))))
 
+(defun pratik/create-custom-dir (dirname)
+  "Create a custom directory with DIRNAME inside '.emacs.d/custom/' directory."
+  (defconst pratik/dir (expand-file-name dirname CUSTOM-DIR))
+  (unless (file-directory-p pratik/dir)
+    (make-directory pratik/dir))
+  pratik/dir)
+
+(defun pratik/set-custom-file (filename)
+  "Return path to FILENAME as child of 'custom' directory."
+  (expand-file-name filename CUSTOM-DIR))
+
 (provide 'auxiliary)
 ;;; auxiliary.el ends here

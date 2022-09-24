@@ -17,6 +17,7 @@
 ;;; Code:
 
 ;; Set a dedicate custom file for Emacs.
+(defconst CUSTOM-FILE (pratik/set-custom-file "custom-file.el"))
 (unless (file-exists-p CUSTOM-FILE)
   (with-temp-buffer (write-file CUSTOM-FILE)))
 (setq custom-file CUSTOM-FILE)

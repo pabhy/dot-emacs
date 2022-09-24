@@ -62,14 +62,14 @@
   :config
   (setq recentf-auto-cleanup 'never
         recentf-max-saved-items 50
-        recentf-save-file RECENTF-FILE)
+        recentf-save-file (pratik/set-custom-file "recentf"))
   (recentf-mode t)
   :bind("C-x C-r" . recentf-open-files))
 
 ;; Show most recently used functions at the top.
 (use-package amx
   :config
-  (setq amx-save-file AMX-ITEMS-FILE)
+  (setq amx-save-file (pratik/set-custom-file "amx-items"))
   (amx-mode t))
 
 ;; Heart of Emacs. Completion framework for Emacs.
@@ -101,7 +101,7 @@
 
 (use-package company-statistics
   :init
-  (setq company-statistics-file COMPANY-STATISTICS-CACHE-FILE)
+  (setq company-statistics-file (pratik/set-custom-file "company-statistics-cache.el"))
   :config
   (company-statistics-mode))
 
