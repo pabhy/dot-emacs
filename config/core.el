@@ -132,9 +132,21 @@
 (use-package expand-region
   :bind ("C-=" . er/expand-region))
 
+(use-package move-text
+  :config
+  (defun indent-region-advice (&rest ignored)
+    (let ((deactivate deactivate-mark))
+      (if (region-active-p)
+          (indent-region (region-beginning) (region-end))
+        (indent-region (line-beginning-position) (line-end-position)))
+      (setq deactivate-mark deactivate)))
+  (advice-add 'move-text-up :after 'indent-region-advice)
+  (advice-add 'move-text-down :after 'indent-region-advice)
+  (move-text-default-bindings))
+
 (use-package avy
   :bind (("C-;" . avy-goto-char)
          ("C-:" . avy-goto-line)))
 
 (provide 'core)
-;;; core.el ends here.
+;;; core.el ends here
