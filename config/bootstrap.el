@@ -87,6 +87,7 @@
                      (lambda (buf) (not (string-match-p "^*" (buffer-name buf)))))
 
 ;; Better default keybindings for better buffer management.
+(bind-key "M-f" 'forward-to-word)
 (bind-key "M-[" 'previous-buffer)
 (bind-key "M-]" 'next-buffer)
 (bind-key "M-o" 'other-window)

@@ -56,7 +56,7 @@
   (treemacs-git-mode 'extended)
   (treemacs-filewatch-mode t)
   (treemacs-indent-guide-mode t)
-  (treemacs-resize-icons 16)
+  (treemacs-resize-icons 18)
   :bind(("M-0" . treemacs-select-window)
         ("C-M-0" . treemacs)))
 

@@ -48,20 +48,22 @@
         all-the-icons-ivy-rich-color-icon t
         all-the-icons-ivy-rich-icon t))
 
-;; Use 'FiraCode' on non-Mac devices. Otherwise keep the default 'Menlo' font.
+;; Use 'Roboto Mono' on non-Mac devices. Otherwise keep the default 'Menlo' font.
 (set-face-attribute 'default nil :height (if IS-MAC 150 110))
-(when (member "Fira Code" (font-family-list))
-	(set-frame-font "Fira Code"))
+(when (member "Roboto Mono" (font-family-list))
+	(set-frame-font "Roboto Mono"))
 
 ;; Setup a good theme and modeline. Make it easy to toggle between dark and
 ;; light modes.
 (use-package doom-themes
+  :custom
+  (doom-themes-treemacs-theme "doom-tomorrow-day")
+  (doom-themes-treemacs-enable-variable-pitch nil)
   :config
   (setq doom-themes-enable-bold t
         doom-themes-enable-italic t)
-  (load-theme 'doom-tomorrow-night t)
+  (load-theme 'doom-tomorrow-day t)
   (doom-themes-visual-bell-config)
-  (setq doom-themes-treemacs-theme "doom-atom")
   (doom-themes-treemacs-config)
   (doom-themes-org-config))
 
@@ -75,13 +77,13 @@
     '(bar matches buffer-info remote-host buffer-position parrot selection-info)
     '(misc-info minor-modes word-count battery lsp indent-info input-method buffer-encoding major-mode process vcs checker "  ")))
 
-(setq active-theme 'doom-tomorrow-night)
+(setq active-theme 'doom-tomorrow-day)
 (defun toggle-dark-light-theme ()
   "Toggle between dark and light mode theme."
   (interactive)
-  (if (eq active-theme 'doom-tomorrow-day)
-      (setq active-theme 'doom-tomorrow-night)
-    (setq active-theme 'doom-tomorrow-day))
+  (if (eq active-theme 'doom-tomorrow-night)
+      (setq active-theme 'doom-tomorrow-day)
+    (setq active-theme 'doom-tomorrow-night))
   (load-theme active-theme t))
 (bind-key "C-x c" 'toggle-dark-light-theme)
 

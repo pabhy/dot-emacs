@@ -55,7 +55,20 @@
   (setq ivy-rich-path-style 'abbrev)
   :after counsel-projectile all-the-icons-ivy-rich
   :config
-  (ivy-rich-mode t))
+  (ivy-rich-mode 1))
+
+(use-package ivy-posframe
+  :custom
+  (ivy-posframe-border-width 10)
+  (ivy-posframe-display-functions-alist
+   '((complete-symbol . ivy-posframe-display-at-point)
+     (swiper . ivy-display-function-fallback)
+     (swiper-isearch . ivy-display-function-fallback)
+     (counsel-rg . ivy-display-function-fallback)
+     (t . ivy-posframe-display-at-frame-top-center)))
+  :config
+  (ivy-posframe-mode t))
+
 
 ;; Remembers the most receently opened files.
 (use-package recentf
