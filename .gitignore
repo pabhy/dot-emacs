@@ -16,6 +16,7 @@ test/result
 .org-id-locations
 .tern-port
 .yas-compiled-snippets.el
+.emacs.desktop*
 eclipse*
 auto-save-list/
 cask/
