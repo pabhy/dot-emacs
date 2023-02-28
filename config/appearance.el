@@ -57,25 +57,15 @@
 ;; light modes.
 (use-package doom-themes
   :custom
-  (doom-themes-treemacs-theme "doom-tomorrow-day")
+  (doom-themes-treemacs-theme "doom-colors")
   (doom-themes-treemacs-enable-variable-pitch nil)
   :config
   (setq doom-themes-enable-bold t
-        doom-themes-enable-italic t)
+        doom-themes-enable-italic nil)
   (load-theme 'doom-tomorrow-day t)
   (doom-themes-visual-bell-config)
   (doom-themes-treemacs-config)
   (doom-themes-org-config))
-
-(use-package doom-modeline
-  :init (doom-modeline-mode)
-  :config
-  (setq doom-modeline-enable-word-count t
-        doom-modeline-indent-info t
-        doom-modeline-height 30)
-  (doom-modeline-def-modeline 'main
-    '(bar matches buffer-info remote-host buffer-position parrot selection-info)
-    '(misc-info minor-modes word-count battery lsp indent-info input-method buffer-encoding major-mode process vcs checker "  ")))
 
 (setq active-theme 'doom-tomorrow-day)
 (defun toggle-dark-light-theme ()
@@ -86,6 +76,16 @@
     (setq active-theme 'doom-tomorrow-night))
   (load-theme active-theme t))
 (bind-key "C-x c" 'toggle-dark-light-theme)
+
+(use-package doom-modeline
+  :config (doom-modeline-mode)
+  :custom
+  (doom-modeline-enable-word-count t)
+  (doom-modeline-indent-info t)
+  (doom-modeline-height 10)
+  (doom-modeline-def-modeline 'main
+    '(bar matches buffer-info remote-host buffer-position parrot selection-info)
+    '(misc-info minor-modes word-count battery lsp indent-info input-method buffer-encoding major-mode process vcs checker "  ")))
 
 (provide 'appearance)
 ;;; appearance.el ends here

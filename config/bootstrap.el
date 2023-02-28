@@ -57,14 +57,15 @@
 (global-display-line-numbers-mode)
 (column-number-mode t)
 (global-hl-line-mode t)
+(setq require-final-newline t)
+(setq scroll-preserve-screen-position t)
 
 (display-battery-mode)
-(display-time-mode)
 
 (setq-default frame-title-format '("%b [%m]"))
 
 (setq-default
- tab-always-indent 'complete
+ tab-always-indent t
  indent-tabs-mode nil
  indent-line-function 'insert-tab
  tab-width 2)
@@ -75,10 +76,17 @@
  make-backup-files nil
  create-lockfiles nil)
 
+(setq-default desktop-dirname (concat user-emacs-directory "custom/"))
+(desktop-save-mode 1)
+
 (setq-default
  select-enable-clipboard t
  mouse-yank-at-point t
  kill-whole-line t)
+
+(setq completion-ignore-case t)
+(setq read-file-name-completion-ignore-case t)
+(setq read-buffer-completion-ignore-case t)
 
 (setq-default help-window-select t)
 
@@ -86,8 +94,10 @@
 (set-frame-parameter (selected-frame) 'buffer-predicate
                      (lambda (buf) (not (string-match-p "^*" (buffer-name buf)))))
 
+(when IS-MAC
+  (setq mac-option-modifier 'super))
+
 ;; Better default keybindings for better buffer management.
-(bind-key "M-f" 'forward-to-word)
 (bind-key "M-[" 'previous-buffer)
 (bind-key "M-]" 'next-buffer)
 (bind-key "M-o" 'other-window)

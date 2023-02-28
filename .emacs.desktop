@@ -1,0 +1,175 @@
+;; -*- mode: emacs-lisp; lexical-binding:t; coding: utf-8-emacs; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Tue Feb 28 13:20:54 2023
+;; Desktop file format version 208
+;; Emacs version 28.2
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (25598 28726 999909 0) (desktop . "208") "abhyap@3c22fb11d5a2.ant.amazon.com" nil nil ((((minibuffer . t) (undecorated) (override-redirect) (font . "-*-Roboto Mono-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1") (border-width . 0) (internal-border-width . 0) (child-frame-border-width) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#4d4d4c") (background-color . "#ffffff") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (no-special-glyphs) (alpha) (scroll-bar-foreground . "black") (scroll-bar-background) (tab-bar-lines . 0) (tool-bar-lines . 0) (title) (inhibit-double-buffering) (menu-bar-lines . 0) (icon-type) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 15) (scroll-bar-height . 15) (no-focus-on-map) (no-accept-focus) (fullscreen . maximized) (visibility . t) (skip-taskbar) (z-group) (display-type . color) (background-mode . light) (cursor-color . "#4271ae") (environment) (last-focus-update) (frameset--id . "E23A-D57A-FF96-27A3") (frameset--mini t . t) (modeline . t) (unsplittable) (icon-name) (display . "Mac") (explicit-name) (tool-bar-position . top) (tabs (current-tab (name . "utterance-to-intents-mapping.org") (explicit-name))) (lsp-headerline--string . #("   internal-review-doc.md" 0 1 (face (:family "Material Icons" :height 1.0 :inherit lsp-headerline-breadcrumb-separator-face) font-lock-face (:family "Material Icons" :height 1.0 :inherit lsp-headerline-breadcrumb-separator-face) display (raise 0.0) rear-nonsticky t) 2 3 (display (image :type imagemagick :file "/Users/abhyap/.emacs.d/straight/build/treemacs/icons/default/markdown.png" :scale 1 :ascent center :width 18 :height 18 :transform-smoothing t :background "#f7f7f7")) 4 26 (font-lock-face lsp-headerline-breadcrumb-path-face))) (lsp-ui-doc-buffer . "Unprintable entity") (height . 69) (width . 282) (left . 1792) (top + -591)) ((min-height . 4) (min-width . 10) (min-height-ignore . 3) (min-width-ignore . 5) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 80) (min-pixel-width . 90) (min-pixel-height-ignore . 60) (min-pixel-width-ignore . 45) (min-pixel-height-safe . 20) (min-pixel-width-safe . 18)) leaf (pixel-width . 2560) (pixel-height . 1367) (total-width . 284) (total-height . 68) (normal-height . 1.0) (normal-width . 1.0) (buffer "bootstrap.el" (selected . t) (hscroll . 0) (fringes 8 8 nil nil) (margins 1) (scroll-bars nil 0 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 1032) (start . 479)) (prev-buffers ("auxiliary.el" 1 1) ("internal-review-doc.md" 1 1494) ("utterance-to-intents-mapping.org" 1 2029))))])
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring nil)
+(setq regexp-search-ring '("org-ro" "kill" "org" "compan" "font" "fon" "boo" "mac" "sola" "sol"))
+(setq register-alist '((48 . #("(cua-mode 1)\n(transient-mark-mode 1)\n" 0 37 (fontified t)))))
+(setq file-name-history '(#("/Users/abhyap/Amazon/Immigration/INSZoomCreds.txt" 0 49 (ivy-index 0)) #("/Users/abhyap/voice-opt-out/" 0 28 (ivy-index 0)) #("/Users/abhyap/voice-opt-out/utterance-to-intents-mapping.org" 0 60 (ivy-index 5)) #("/Users/abhyap/org/2023/goals.org" 0 32 (ivy-index 6)) #("/Users/abhyap/org/work/dashboard.org" 0 36 (ivy-index 0)) #("/Users/abhyap/voice-opt-out/internal-review-doc.md" 0 50 (ivy-index 0)) #("/Users/abhyap/voice-opt-out/todo.org" 0 36 (ivy-index 0)) #("/Users/abhyap/voice-opt-out/prompts-to-intents-mapping.org" 0 58 (ivy-index 0)) #("/Users/abhyap/projects/silveraux/src/MyComp.js" 0 46 (ivy-index 0)) #("/Users/abhyap/.zshrc" 0 20 (ivy-index 2)) #("/Users/abhyap/.emacs.d/custom/.cache/eslint/" 0 44 (ivy-index 3)) #("/Users/abhyap/projects/silveraux/" 0 33 (ivy-index 0)) #("/Users/abhyap/projects/" 0 23 (ivy-index 0)) #("/Users/abhyap/org/2023/finance/assets/real-estate.org" 0 53 (ivy-index 0)) #("/Users/abhyap/org/2023/finance/assets/stocks.org" 0 48 (ivy-index 0)) #("/Users/abhyap/org/2023/work/interviews.org" 0 42 (ivy-index 0)) #("/Users/abhyap/org/2023/work/learning.org" 0 40 (ivy-index 0)) #("/Users/abhyap/org/2023/work/work.org" 0 36 (ivy-index 0)) #("/Users/abhyap/org/2023/work/goals.org" 0 37 (ivy-index 0)) "~/Downloads/sin.org" #("/Users/abhyap/org/2023/health/goals.org" 0 39 (ivy-index 0)) #("/Users/abhyap/org/2023/health/physical/workout.org" 0 50 (ivy-index 0)) #("/Users/abhyap/org/2023/health/physical/fitness.org" 0 50 (ivy-index 0)) #("/Users/abhyap/org/2023/health/physical/diet.org" 0 47 (ivy-index 0)) #("/Users/abhyap/org/2023/health/mental" 0 36 (ivy-index 0)) #("/Users/abhyap/org/2023/health/physical" 0 38 (ivy-index 0)) #("/Users/abhyap/org/2023/personal/goals.org" 0 41 (ivy-index 0)) #("/Users/abhyap/org/2023/finance/assets" 0 37 (ivy-index 0)) #("/Users/abhyap/org/2023/finance/goal.org" 0 39 (ivy-index 0)) #("/Users/abhyap/org/2023/finance/assets.org" 0 41 (ivy-index 0)) #("/Users/abhyap/org/2023/finance/ledgers" 0 38 (ivy-index 0)) #("/Users/abhyap/org/2023/health" 0 29 (ivy-index 0)) #("/Users/abhyap/org/2023/work" 0 27 (ivy-index 0)) #("/Users/abhyap/org/2023/finance" 0 30 (ivy-index 0)) #("/Users/abhyap/org/2023/personal" 0 31 (ivy-index 0)) #("/Users/abhyap/org/2023" 0 22 (ivy-index 0)) #("/Users/abhyap/org/health/diet.org" 0 33 (ivy-index 0)) #("/Users/abhyap/org/health/workout.org" 0 36 (ivy-index 0)) #("/Users/abhyap/org/health" 0 24 (ivy-index 0)) "~/.emacs.d/config/dev.el" "~/.emacs.d/config/bootstrap.el" "~/.emacs.d/config/appearance.el" "/usr/local/Cellar/emacs-mac/emacs-28.2-mac-9.1/share/emacs/28.2/lisp/loaddefs.el" "~/.emacs.d/config/user-config.el" "~/.emacs.d/config/auxiliary.el" "~/.emacs.d/config/core.el" "~/.emacs.d/.gitignore" "~/.emacs.d/init.el" "~/Ebooks/Atomic_Habits.pdf" "~/.emacs.d/config/doc-config.el" "~/.emacs.d/games/snake-scores" "~/org/personal/ideas.org" "~/org/work/work.org" "~/org/personal/fitness.org" "~/org/personal/personal.org" "~/.emacs.d/straight/build/ivy-posframe/ivy-posframe-autoloads.el" "~/workplace/AssisWs/build/AlexaShoppingSuggestionsInjectionService/AlexaShoppingSuggestionsInjectionService-1.0/AL2_x86_64/DEV.STD.PTHREAD/build/brazil-documentation/findbugs/findbugs_report.html" "~/org/work/feedback.org" "~/org/finance/assets.org" "~/org/personal/goals.org" "~/org/personal/reading-list.org"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 208
+  "/Users/abhyap/.emacs.d/config/bootstrap.el"
+  "bootstrap.el"
+  'emacs-lisp-mode
+  '(eldoc-mode global-auto-revert-mode override-global-mode which-key-mode ivy-mode ivy-posframe-mode company-mode flycheck-mode undo-tree-mode ws-butler-mode git-gutter-mode dap-mode yas-minor-mode subword-mode projectile-mode)
+  1032
+  '(2415 nil)
+  nil
+  nil
+  '((buffer-display-time 25598 28682 812581 0) (buffer-file-coding-system . prefer-utf-8-unix))
+  '((mark-ring (3091 3091 3091 3091 3091 3091 3091 2540 2415 2415 2415 2415 2415 2415 2415 2119))))
+
+(desktop-create-buffer 208
+  "/Users/abhyap/.emacs.d/config/auxiliary.el"
+  "auxiliary.el"
+  'emacs-lisp-mode
+  '(eldoc-mode global-auto-revert-mode override-global-mode which-key-mode ivy-mode ivy-posframe-mode company-mode flycheck-mode undo-tree-mode ws-butler-mode git-gutter-mode dap-mode yas-minor-mode subword-mode projectile-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 25598 28672 641796 355000) (buffer-file-coding-system . prefer-utf-8-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/abhyap/voice-opt-out/internal-review-doc.md"
+  "internal-review-doc.md"
+  'markdown-mode
+  '(eldoc-mode global-auto-revert-mode override-global-mode which-key-mode ivy-mode ivy-posframe-mode company-mode flycheck-mode undo-tree-mode lsp-mode dap-mode yas-minor-mode projectile-mode lsp-completion-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode lsp-diagnostics-mode)
+  1494
+  '(1494 nil)
+  nil
+  nil
+  '((tab-width . 4) (buffer-display-time 25598 28669 899272 355000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (1494 1494 1494 36 1 1 1))))
+
+(desktop-create-buffer 208
+  "/Users/abhyap/voice-opt-out/utterance-to-intents-mapping.org"
+  "utterance-to-intents-mapping.org"
+  'org-mode
+  '(global-auto-revert-mode override-global-mode which-key-mode ivy-mode ivy-posframe-mode company-mode flycheck-mode undo-tree-mode ws-butler-mode dap-mode yas-minor-mode projectile-mode org-indent-mode)
+  2029
+  '(2029 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25598 28614 819163 355000) (buffer-file-coding-system . undecided-unix) (truncate-lines . t))
+  '((mark-ring (2029))))
+
+(desktop-create-buffer 208
+  "/Users/abhyap/org/personal/goals.org"
+  "goals.org"
+  'org-mode
+  '(global-auto-revert-mode override-global-mode which-key-mode ivy-mode ivy-posframe-mode company-mode flycheck-mode undo-tree-mode ws-butler-mode git-gutter-mode dap-mode yas-minor-mode projectile-mode org-indent-mode)
+  3438
+  '(2983 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25598 23133 588706 833000) (buffer-file-coding-system . undecided-unix) (truncate-lines . t))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/abhyap/org/2023/goals.org"
+  "goals.org"
+  'org-mode
+  '(global-auto-revert-mode override-global-mode which-key-mode ivy-mode ivy-posframe-mode company-mode flycheck-mode undo-tree-mode ws-butler-mode git-gutter-mode dap-mode yas-minor-mode projectile-mode org-indent-mode)
+  1
+  '(1 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25597 43279 595858 852000) (buffer-file-coding-system . utf-8-unix) (truncate-lines . t))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/abhyap/.emacs.d/config/org-config.el"
+  "org-config.el"
+  'emacs-lisp-mode
+  '(eldoc-mode global-auto-revert-mode override-global-mode which-key-mode ivy-mode ivy-posframe-mode company-mode flycheck-mode undo-tree-mode ws-butler-mode git-gutter-mode dap-mode yas-minor-mode subword-mode projectile-mode)
+  1964
+  '(2682 nil)
+  nil
+  nil
+  '((buffer-display-time 25597 43274 852419 852000) (buffer-file-coding-system . prefer-utf-8-unix))
+  '((mark-ring (1 3012))))
+
+(desktop-create-buffer 208
+  "/Users/abhyap/.emacs.d/init.el"
+  "init.el"
+  'emacs-lisp-mode
+  '(eldoc-mode global-auto-revert-mode override-global-mode which-key-mode ivy-mode ivy-posframe-mode company-mode flycheck-mode undo-tree-mode ws-butler-mode git-gutter-mode dap-mode yas-minor-mode subword-mode projectile-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 25597 41660 339404 491000) (buffer-file-coding-system . prefer-utf-8-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/abhyap/.emacs.d/config/appearance.el"
+  "appearance.el"
+  'emacs-lisp-mode
+  '(eldoc-mode global-auto-revert-mode override-global-mode which-key-mode ivy-mode ivy-posframe-mode company-mode flycheck-mode undo-tree-mode ws-butler-mode git-gutter-mode dap-mode yas-minor-mode subword-mode projectile-mode)
+  1943
+  '(1943 nil)
+  nil
+  nil
+  '((buffer-display-time 25597 40566 709948 401000) (buffer-file-coding-system . prefer-utf-8-unix))
+  '((mark-ring (2559 2557 2559 2557 2557 2557 1772 1772 1937 1917 2079 2079 2250 2284 1772 2079))))
+
+(desktop-create-buffer 208
+  nil
+  "silveraux"
+  'dired-mode
+  '(global-auto-revert-mode override-global-mode which-key-mode ivy-mode ivy-posframe-mode company-mode ws-butler-mode dap-mode yas-minor-mode projectile-mode)
+  662
+  '(nil nil)
+  t
+  '("/Users/abhyap/projects/silveraux/")
+  '((buffer-display-time 25597 23236 387129 401000))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/abhyap/.emacs.d/config/dev.el"
+  "dev.el"
+  'emacs-lisp-mode
+  '(eldoc-mode global-auto-revert-mode override-global-mode which-key-mode ivy-mode ivy-posframe-mode company-mode flycheck-mode undo-tree-mode ws-butler-mode git-gutter-mode dap-mode yas-minor-mode subword-mode projectile-mode)
+  1575
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 25597 23066 529391 363000) (buffer-file-coding-system . prefer-utf-8-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "*info*"
+  'Info-mode
+  '(global-auto-revert-mode override-global-mode which-key-mode ivy-mode ivy-posframe-mode company-mode undo-tree-mode ws-butler-mode dap-mode yas-minor-mode projectile-mode)
+  720401
+  '(2769 nil)
+  t
+  '("/usr/local/Cellar/emacs-mac/emacs-28.2-mac-9.1/share/info/org" "Hacking" ((history ("/usr/local/Cellar/emacs-mac/emacs-28.2-mac-9.1/share/info/org" "Hooks" 721014) ("/usr/local/Cellar/emacs-mac/emacs-28.2-mac-9.1/share/info/org" "Add-on Packages" 721114) ("/usr/local/Cellar/emacs-mac/emacs-28.2-mac-9.1/share/info/org" "Hacking" 720047) ("/usr/local/Cellar/emacs-mac/emacs-28.2-mac-9.1/share/info/org" "Top" 2769) ("dir" "Top" 227) ("/usr/local/Cellar/emacs-mac/emacs-28.2-mac-9.1/share/info/org" "Plain Lists" 58164) ("/usr/local/Cellar/emacs-mac/emacs-28.2-mac-9.1/share/info/org" "Document Structure" 36435) ("/usr/local/Cellar/emacs-mac/emacs-28.2-mac-9.1/share/info/org" "Top" 932) ("/usr/local/Cellar/emacs-mac/emacs-28.2-mac-9.1/share/info/org" "Introduction" 22848) ("/usr/local/Cellar/emacs-mac/emacs-28.2-mac-9.1/share/info/org" "Top" 932) ("dir" "Top" 227) ("/usr/local/Cellar/emacs-mac/emacs-28.2-mac-9.1/share/info/org" "Top" 932) ("/usr/local/Cellar/emacs-mac/emacs-28.2-mac-9.1/share/info/org" "Introduction" 22848) ("/usr/local/Cellar/emacs-mac/emacs-28.2-mac-9.1/share/info/org" "Top" 932) ("dir" "Top" 608))))
+  '((tab-width . 8) (buffer-display-time 25578 1937 461394 484000) (buffer-file-coding-system . utf-8-unix) (case-fold-search . t))
+  '((mark-ring (720047))))
+
+(desktop-create-buffer 208
+  "/Users/abhyap/org/personal/personal.org"
+  "personal.org"
+  'org-mode
+  '(global-auto-revert-mode override-global-mode which-key-mode ivy-mode ivy-posframe-mode company-mode flycheck-mode undo-tree-mode ws-butler-mode git-gutter-mode dap-mode yas-minor-mode projectile-mode org-indent-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25598 28682 797721 0) (buffer-file-coding-system . undecided-unix) (truncate-lines . t))
+  '((mark-ring nil)))
+

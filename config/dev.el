@@ -32,24 +32,25 @@
 (use-package projectile
   :bind-keymap
   ("C-c p" . projectile-command-map)
+  :bind
+  ("C-x f" . projectile-find-file)
+  :custom
+  (projectile-switch-project-action #'projectile-dired)
   :init
-  (setq projectile-switch-project-action #'projectile-dired)
-  :config
   (setq projectile-completion-system 'ivy)
   (setq projectile-cache-file (pratik/set-custom-file "projectile-bookmarks.eld")
         projectile-known-projects-file (pratik/set-custom-file "projectile-known-projects.eld"))
+  :config
   (add-to-list 'projectile-project-root-files-bottom-up "pubspec.yaml")
   (add-to-list 'projectile-project-root-files-bottom-up "BUILD")
   (projectile-mode t))
 
-(use-package counsel-projectile
-  :after projectile counsel
-  :bind ("C-x f" . counsel-projectile-find-file)
-  :config
-  (counsel-projectile-mode t))
-
 ;; IDE like sidebar.
 (use-package treemacs
+  :custom
+  (treemacs-width 45)
+  (treemacs-width-is-initially-locked -1)
+  (treemacs-persist-file (pratik/set-custom-file "treemacs-persist"))
   :config
   (treemacs-project-follow-mode t)
   (treemacs-follow-mode t)
@@ -68,9 +69,9 @@
 
 ;; Language server protocol for languages to make Emacs IDE-like.
 (use-package lsp-mode
-  :init
-  (setq lsp-server-install-dir (pratik/create-custom-dir ".cache/lsp/"))
-  (setq lsp-session-file (pratik/set-custom-file ".lsp-session-v1"))
+  :custom
+  (lsp-server-install-dir (pratik/create-custom-dir ".cache/"))
+  (lsp-session-file (pratik/set-custom-file ".lsp-session-v1"))
   :hook ((lsp-mode . lsp-enable-which-key-integration)
          (java-mode . lsp-deferred)
          (rust-mode . lsp-deferred)

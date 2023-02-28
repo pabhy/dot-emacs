@@ -46,14 +46,19 @@
   :bind (("C-x C-f" . counsel-find-file)
          ("C-c '" . counsel-imenu)
          ("C-c s" . counsel-rg)
+         ("M-x" . counsel-M-x)
+         ("C-h v" . counsel-describe-variable)
+         ("C-h f" . counsel-describe-function)
+         ("C-x C-r" . counsel-recentf)
          :map counsel-find-file-map
          ("RET" . ivy-alt-done)))
 
 (use-package ivy-rich
   :init
   (setcdr (assq t ivy-format-functions-alist) #'ivy-format-function-line)
-  (setq ivy-rich-path-style 'abbrev)
-  :after counsel-projectile all-the-icons-ivy-rich
+  :custom
+  (ivy-rich-path-style 'abbrev)
+  :after ivy all-the-icons-ivy-rich
   :config
   (ivy-rich-mode 1))
 
@@ -72,37 +77,40 @@
 
 ;; Remembers the most receently opened files.
 (use-package recentf
+  :custom
+  (recentf-auto-cleanup 'never)
+  (recentf-max-saved-items 50)
+  (recentf-save-file (pratik/set-custom-file "recentf"))
   :config
-  (setq recentf-auto-cleanup 'never
-        recentf-max-saved-items 50
-        recentf-save-file (pratik/set-custom-file "recentf"))
-  (recentf-mode t)
-  :bind("C-x C-r" . recentf-open-files))
+  (recentf-mode t))
 
 ;; Show most recently used functions at the top.
 (use-package amx
+  :custom
+  (amx-save-file (pratik/set-custom-file "amx-items"))
   :config
-  (setq amx-save-file (pratik/set-custom-file "amx-items"))
   (amx-mode t))
 
 ;; Heart of Emacs. Completion framework for Emacs.
 (use-package company
   :bind (:map
          global-map
-         ("TAB" . company-complete-common-or-cycle)
+         ("s-<tab>" . company-complete-common-or-cycle)
          :map company-active-map
          ("C-n" . company-select-next)
          ("C-p" . company-select-previous))
+  :custom
+  (company-ide-delay 0.05)
+  (company-minimum-prefix-length 1)
+  (company-backends '((company-capf company-yasnippet company-dabbrev company-files)))
+  (company-dabbrev-minimum-length 2)
+  (company-dabbrev-other-buffers nil)
+  (company-dabbrev-ignore-case t)
+  (company-dabbrev-downcase nil)
+  (company-files-exclusions '(".git/" ".DS_Store"))
+  (company-transformers '(delete-consecutive-dups
+                          company-sort-by-occurrence))
   :config
-  (setq company-ide-delay 0.05
-        company-minimum-prefix-length 1)
-  (setq company-backends '((company-capf company-yasnippet company-dabbrev company-files)))
-  (setq company-dabbrev-minimum-length 2
-        company-dabbrev-other-buffers nil
-        company-dabbrev-ignore-case t)
-  (setq company-files-exclusions '(".git/" ".DS_Store"))
-  (setq company-transformers '(delete-consecutive-dups
-                             company-sort-by-occurrence))
   (global-company-mode t))
 
 (use-package company-quickhelp
@@ -113,8 +121,8 @@
   (company-quickhelp-mode))
 
 (use-package company-statistics
-  :init
-  (setq company-statistics-file (pratik/set-custom-file "company-statistics-cache.el"))
+  :custom
+  (company-statistics-file (pratik/set-custom-file "company-statistics-cache.el"))
   :config
   (company-statistics-mode))
 

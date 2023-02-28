@@ -73,16 +73,16 @@
         org-journal-date-format "%A, %d %B %Y"))
 
 ;; Organize and track learning and store things with org-mode.
-(use-package org-roam
-  :init
-  (setq org-roam-directory ORG-ROAM-DIR
-				org-roam-db-location ORG-ROAM-DB)
-  :config
-  (org-roam-db-autosync-mode))
+;; (use-package org-roam
+;;   :init
+;;   (setq org-roam-directory ORG-ROAM-DIR
+;; 				org-roam-db-location ORG-ROAM-DB)
+;;   :config
+;;   (org-roam-db-autosync-mode))
 
-(bind-key "C-c a" 'org-agenda)
-(bind-key "C-c c" 'org-capture)
-(bind-key "C-c i b" 'org-indent-block)
+;; (bind-key "C-c a" 'org-agenda)
+;; (bind-key "C-c c" 'org-capture)
+;; (bind-key "C-c i b" 'org-indent-block)
 
 (provide 'org-config)
 ;;; org-config.el ends here

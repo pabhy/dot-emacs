@@ -16,7 +16,7 @@
 
 ;;; Code:
 (use-package web-mode
-  :config
+  :init
   (add-to-list 'auto-mode-alist '("\\.svelte?\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.css?\\'" . web-mode))
@@ -35,12 +35,20 @@
         web-mode-enable-current-element-highlight t
         web-mode-enable-current-column-highlight t))
 
+(use-package rjsx-mode
+  :init
+  ;; rjsx-mode automatically binds to jsx. Add binding for js files explicitly.
+  (add-to-list 'auto-mode-alist '("\\/.*\\.js\\'" . rjsx-mode))
+  (setq js-indent-level 2))
+
 (use-package emmet-mode
-  :hook
-  (css-mode-hook . emmet-mode)
-  (web-mode-hook . emmet-mode)
+  :init
+  (setq emmet-move-cursor-between-quotes t)
+  (add-hook 'web-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
+  (add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
+  (add-hook 'emmet-mode-hook (lambda () (setq emmet-indentation 2)))
   :config
-  (setq emmet-move-cursor-between-quotes t))
+  (add-to-list 'emmet-jsx-major-modes 'rjsx-mode))
 
 (use-package json-mode)
 

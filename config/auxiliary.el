@@ -27,5 +27,8 @@
   "Return path to FILENAME as child of 'custom' directory."
   (expand-file-name filename CUSTOM-DIR))
 
+;; Define helper keybindings to manage this config.
+
+
 (provide 'auxiliary)
 ;;; auxiliary.el ends here
