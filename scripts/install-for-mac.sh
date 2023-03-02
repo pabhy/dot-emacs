@@ -17,12 +17,21 @@ GREEN="\033[0;32m"
 NC="\033[0m"
 
 PACKAGES=(
+    # Make HTTP requests easier
     curl
+
+    # Spell check dictionary
     aspell
+
+    # Document support
     pandoc
+
+    # Basic build tools
     cmake
     libtool
     libtool-bin
+
+    # Package for double accounting
     ledger
 )
 
