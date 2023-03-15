@@ -57,7 +57,7 @@
 ;; light modes.
 (use-package doom-themes
   :custom
-  (doom-themes-treemacs-theme "doom-colors")
+  (doom-themes-treemacs-theme "doom")
   (doom-themes-treemacs-enable-variable-pitch nil)
   :config
   (setq doom-themes-enable-bold t

@@ -43,6 +43,14 @@
 
 ;; Start Emacs in fullscreen mode.
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
+(setq default-frame-alist
+      (append (list
+               '(vertical-scroll-bars . nil)
+               '(internal-border-width . 24)
+               '(left-fringe    . 1)
+               '(right-fringe   . 1)
+               '(tool-bar-lines . 0)
+               '(menu-bar-lines . 0))))
 
 ;; Clear the clutter from Emacs frame.
 (menu-bar-mode -1)
@@ -53,9 +61,13 @@
  inhibit-startup-screen t
  initial-scratch-message "")
 
+;; Split windows vertically right and show a divider.
+(setq window-divider-default-places 'right-only)
+(window-divider-mode 1)
+
 ;; Make Emacs a better code editor.
-(global-display-line-numbers-mode)
-(column-number-mode t)
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+(add-hook 'prog-mode-hook 'column-number-mode)
 (global-hl-line-mode t)
 (setq require-final-newline t)
 (setq scroll-preserve-screen-position t)
