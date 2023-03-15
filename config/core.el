@@ -16,13 +16,13 @@
 
 ;; Prompts the next possible keystroke after a prefix key.
 (use-package which-key
-  :ensure t
+  :custom
+  (which-key-add-column-padding 1)
+  (which-key-sort-uppercase-first nil)
+  (which-key-show-early-on-C-h t)
+  (which-key-idle-delay 1.0)
+  (which-key-idle-secondary-delay 0.05)
   :config
-  (setq which-key-add-column-padding 1
-        which-key-sort-uppercase-first nil
-        which-key-show-early-on-C-h t
-        which-key-idle-delay 1.0
-        which-key-idle-secondary-delay 0.05)
   (which-key-mode))
 
 ;; Improve Emacs minibuffer completion and search.
@@ -104,7 +104,7 @@
   (company-minimum-prefix-length 1)
   (company-backends '((company-capf company-yasnippet company-dabbrev company-files)))
   (company-dabbrev-minimum-length 2)
-  (company-dabbrev-other-buffers nil)
+  (company-dabbrev-other-buffers t)
   (company-dabbrev-ignore-case t)
   (company-dabbrev-downcase nil)
   (company-files-exclusions '(".git/" ".DS_Store"))

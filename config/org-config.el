@@ -59,30 +59,19 @@
         ("DELEGATED" . "#5a5a5a")
         ("DONE" . "#b5bd68")))
 
-(use-package org-superstar
+(bind-key "C-c a" 'org-agenda)
+(bind-key "C-c c" 'org-capture)
+(bind-key "C-c i b" 'org-indent-block)
+
+(use-package org-modern
+  :hook
+  (org-mode . org-modern-mode)
+  (org-agenda-finalize . org-modern-agenda))
+
+(use-package org-modern-indent
+  :straight (org-modern-indent :type git :host github :repo "jdtsmith/org-modern-indent")
   :config
-  (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1))))
-
-;; A nice package for maintaining a memoir.
-(use-package org-journal
-  :init
-  (setq org-journal-prefix-key "C-c j")
-  :config
-  (setq org-journal-dir (expand-file-name "journal/" org-directory)
-        org-journal-file-type 'daily
-        org-journal-date-format "%A, %d %B %Y"))
-
-;; Organize and track learning and store things with org-mode.
-;; (use-package org-roam
-;;   :init
-;;   (setq org-roam-directory ORG-ROAM-DIR
-;; 				org-roam-db-location ORG-ROAM-DB)
-;;   :config
-;;   (org-roam-db-autosync-mode))
-
-;; (bind-key "C-c a" 'org-agenda)
-;; (bind-key "C-c c" 'org-capture)
-;; (bind-key "C-c i b" 'org-indent-block)
+  (add-hook 'org-mode-hook #'org-modern-indent-mode 90))
 
 (provide 'org-config)
 ;;; org-config.el ends here

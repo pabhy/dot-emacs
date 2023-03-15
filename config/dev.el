@@ -67,6 +67,11 @@
 (use-package treemacs-magit
   :after treemacs magit)
 
+(use-package format-all
+  :hook
+  (prog-mode . format-all-mode)
+  (prog-mode . format-all-ensure-formatter))
+
 ;; Language server protocol for languages to make Emacs IDE-like.
 (use-package lsp-mode
   :custom
