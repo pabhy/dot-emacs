@@ -30,5 +30,21 @@
 ;; Define helper keybindings to manage this config.
 
 
+;; Define helper function to toggle between light and dark mode themes and add a
+;; keybinding to it.
+(defvar pratik/light-theme)
+(defvar pratik/dark-theme)
+(defvar pratik/active-theme 'pratik/light-theme)
+(defun pratik/toggle-dark-light-theme ()
+  "Toggle between dark and light mode theme."
+  (interactive)
+  (disable-theme pratik/active-theme)
+  (if (eq pratik/active-theme pratik/light-theme)
+      (setq pratik/active-theme pratik/dark-theme)
+    (setq pratik/active-theme pratik/light-theme))
+  (load-theme pratik/active-theme t))
+(global-set-key (kbd "C-x c") 'pratik/toggle-dark-light-theme)
+
+
 (provide 'auxiliary)
 ;;; auxiliary.el ends here

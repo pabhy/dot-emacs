@@ -46,7 +46,7 @@
 (setq default-frame-alist
       (append (list
                '(vertical-scroll-bars . nil)
-               '(internal-border-width . 24)
+               '(internal-border-width . 15)
                '(left-fringe    . 1)
                '(right-fringe   . 1)
                '(tool-bar-lines . 0)
@@ -81,6 +81,7 @@
  indent-tabs-mode nil
  indent-line-function 'insert-tab
  tab-width 2)
+(setq-default line-spacing 0.1)
 
 (setq-default
  auto-save-default nil

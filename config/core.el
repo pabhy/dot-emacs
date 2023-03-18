@@ -132,6 +132,13 @@
 (require 'ibuf-ext)
 (add-to-list 'ibuffer-never-show-predicates "^\\*")
 
+(use-package dumb-jump
+  :init
+  (setq xref-show-definitions-function #'xref-show-definitions-completing-read)
+  :hook
+  ;; Allow using default xref with 'M-.' to use dumb-jump.
+  (xref-backend-functions . dumb-jump-xref-activate))
+
 (use-package ace-window
   :bind ("M-o" . ace-window))
 

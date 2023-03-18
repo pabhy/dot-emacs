@@ -53,29 +53,24 @@
 (when (member "Roboto Mono" (font-family-list))
 	(set-frame-font "Roboto Mono"))
 
-;; Setup a good theme and modeline. Make it easy to toggle between dark and
-;; light modes.
+(use-package solaire-mode
+  :config
+  (solaire-global-mode 1))
+
 (use-package doom-themes
   :custom
   (doom-themes-treemacs-theme "doom")
   (doom-themes-treemacs-enable-variable-pitch nil)
+  (doom-themes-enable-bold t)
+  (doom-themes-enable-italic t)
+  (doom-themes-padded-modeline t)
   :config
-  (setq doom-themes-enable-bold t
-        doom-themes-enable-italic nil)
-  (load-theme 'doom-tomorrow-day t)
   (doom-themes-visual-bell-config)
   (doom-themes-treemacs-config)
-  (doom-themes-org-config))
-
-(setq active-theme 'doom-tomorrow-day)
-(defun toggle-dark-light-theme ()
-  "Toggle between dark and light mode theme."
-  (interactive)
-  (if (eq active-theme 'doom-tomorrow-night)
-      (setq active-theme 'doom-tomorrow-day)
-    (setq active-theme 'doom-tomorrow-night))
-  (load-theme active-theme t))
-(bind-key "C-x c" 'toggle-dark-light-theme)
+  (doom-themes-org-config)
+  (setq pratik/light-theme 'doom-solarized-light)
+  (setq pratik/dark-theme 'doom-vibrant)
+  (pratik/toggle-dark-light-theme))
 
 (use-package doom-modeline
   :config (doom-modeline-mode)

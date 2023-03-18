@@ -25,8 +25,10 @@
                 transient-history-file (pratik/set-custom-file "history.el")))
 
 (use-package git-gutter
-  :config
-  (global-git-gutter-mode t))
+  :custom
+  (git-gutter:disabled-modes '((org-mode image-mode text-mode)))
+  :hook
+  (prog-mode . git-gutter-mode))
 
 ;; Project manager for Emacs.
 (use-package projectile
