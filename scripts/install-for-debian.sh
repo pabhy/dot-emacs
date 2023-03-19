@@ -23,6 +23,7 @@ PACKAGES=(
     libtool
     libtool-bin
     ledger
+    ripgrep
 )
 
 install_packages() {
@@ -31,7 +32,7 @@ install_packages() {
     $PACKAGE_MANAGER update
     for package in "${PACKAGES[@]}"
     do
-        $PACKAGE_MANAGER install $package
+        $PACKAGE_MANAGER install -y $package
     done
 }
 

@@ -49,7 +49,7 @@
         all-the-icons-ivy-rich-icon t))
 
 ;; Use 'Roboto Mono' on non-Mac devices. Otherwise keep the default 'Menlo' font.
-(set-face-attribute 'default nil :height (if IS-MAC 150 110))
+(set-face-attribute 'default nil :height (if IS-MAC 150 105))
 (when (member "Roboto Mono" (font-family-list))
 	(set-frame-font "Roboto Mono"))
 
