@@ -41,7 +41,7 @@
 (sensible-defaults/use-all-settings)
 (sensible-defaults/use-all-keybindings)
 
-;; Start Emacs in fullscreen mode.
+;; Change the default appearance of Emacs frames.
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 (setq default-frame-alist
       (append (list
@@ -57,60 +57,76 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (blink-cursor-mode -1)
-(setq-default
- inhibit-startup-screen t
- initial-scratch-message "")
+(setq-default inhibit-startup-screen t
+              initial-scratch-message ""
+              frame-title-format '("%b [%m]"))
+(setq-default line-spacing 0.1)
+(display-battery-mode)
 
-;; Split windows vertically right and show a divider.
+;; It's annoying to me that Emacs makes a sound everytime on error or shows a visual
+;; bell.
+(setq visible-bell t)
+(setq ring-bell-function 'ignore)
+
+;; Split windows vertically right and show a clean divider.
 (setq window-divider-default-places 'right-only)
 (window-divider-mode 1)
 
-;; Make Emacs a better code editor.
+;; Make Emacs a better code editor as well as a text editor.
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 (add-hook 'prog-mode-hook 'column-number-mode)
+(setq font-lock-maximum-decoration t)
+(setq require-final-newline t
+      scroll-preserve-screen-position t)
 (global-hl-line-mode t)
-(setq require-final-newline t)
-(setq scroll-preserve-screen-position t)
 
-(display-battery-mode)
+;; Default line break behavior.
+(setq fill-column 80)
+(auto-fill-mode nil)
 
-(setq-default frame-title-format '("%b [%m]"))
-
+;; Tab settings.
 (setq-default
  tab-always-indent t
  indent-tabs-mode nil
  indent-line-function 'insert-tab
  tab-width 2)
-(setq-default line-spacing 0.1)
 
+;; I don't want autosave and backup files that Emacs creates.
 (setq-default
  auto-save-default nil
  auto-save-list-file-prefix nil
  make-backup-files nil
  create-lockfiles nil)
 
+;; Open buffers from previous session by default when I start Emacs.
 (setq-default desktop-dirname (concat user-emacs-directory "custom/"))
 (desktop-save-mode 1)
 
+;; Kill and yank settings. I override how kill ring functions in
+;; `user-config.el' file according to my personal preference.
 (setq-default
  select-enable-clipboard t
  mouse-yank-at-point t
  kill-whole-line t)
 
+;; Default completion settings.
 (setq completion-ignore-case t)
 (setq read-file-name-completion-ignore-case t)
 (setq read-buffer-completion-ignore-case t)
 
+;; Automatically switch focus to Help buffer whenever one opens, so that I can
+;; easily close it by pressing 'q' when I am done taking help.
 (setq-default help-window-select t)
 
 ;; Ignore buffers that start with '*' when switching buffers.
 (set-frame-parameter (selected-frame) 'buffer-predicate
                      (lambda (buf) (not (string-match-p "^*" (buffer-name buf)))))
 
+;; On Mac, Opton key is Super key.
 (when IS-MAC
   (setq mac-option-modifier 'super))
 
-;; Better default keybindings for better buffer management.
+;; Better default keybindings for better buffer and window management.
 (bind-key "M-[" 'previous-buffer)
 (bind-key "M-]" 'next-buffer)
 (bind-key "M-o" 'other-window)
@@ -126,6 +142,8 @@
 	(when (daemonp)
 		(exec-path-from-shell-initialize)))
 
+;; I haven't used 'emacsclient' as much, but let's still start Emacs server, coz
+;; why not?!
 (server-start)
 
 (provide 'bootstrap)

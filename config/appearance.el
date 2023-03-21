@@ -62,10 +62,9 @@
   (doom-themes-treemacs-theme "doom")
   (doom-themes-treemacs-enable-variable-pitch nil)
   (doom-themes-enable-bold t)
-  (doom-themes-enable-italic t)
+  (doom-themes-enable-italic nil)
   (doom-themes-padded-modeline t)
   :config
-  (doom-themes-visual-bell-config)
   (doom-themes-treemacs-config)
   (doom-themes-org-config)
   (setq pratik/light-theme 'doom-solarized-light)
@@ -73,14 +72,14 @@
   (pratik/toggle-dark-light-theme))
 
 (use-package doom-modeline
-  :config (doom-modeline-mode)
   :custom
   (doom-modeline-enable-word-count t)
   (doom-modeline-indent-info t)
   (doom-modeline-height 10)
   (doom-modeline-def-modeline 'main
     '(bar matches buffer-info remote-host buffer-position parrot selection-info)
-    '(misc-info minor-modes word-count battery lsp indent-info input-method buffer-encoding major-mode process vcs checker "  ")))
+    '(misc-info minor-modes word-count battery lsp indent-info input-method buffer-encoding major-mode process vcs checker "  "))
+  :config (doom-modeline-mode))
 
 (provide 'appearance)
 ;;; appearance.el ends here

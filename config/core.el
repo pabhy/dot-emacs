@@ -65,15 +65,9 @@
 (use-package ivy-posframe
   :custom
   (ivy-posframe-border-width 10)
-  (ivy-posframe-display-functions-alist
-   '((complete-symbol . ivy-posframe-display-at-point)
-     (swiper . ivy-display-function-fallback)
-     (swiper-isearch . ivy-display-function-fallback)
-     (counsel-rg . ivy-display-function-fallback)
-     (t . ivy-posframe-display-at-frame-top-center)))
+  (ivy-posframe-display-functions-alist '((t . ivy-posframe-display)))
   :config
   (ivy-posframe-mode t))
-
 
 ;; Remembers the most receently opened files.
 (use-package recentf
