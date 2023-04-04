@@ -61,6 +61,7 @@
               initial-scratch-message ""
               frame-title-format '("%b [%m]"))
 (setq-default line-spacing 0.1)
+(setq x-underline-at-descent-line t)
 (display-battery-mode)
 
 ;; It's annoying to me that Emacs makes a sound everytime on error or shows a visual

@@ -95,7 +95,7 @@
          ("C-p" . company-select-previous))
   :custom
   (company-ide-delay 0.05)
-  (company-minimum-prefix-length 1)
+  (company-minimum-prefix-length 3)
   (company-backends '((company-capf company-yasnippet company-dabbrev company-files)))
   (company-dabbrev-minimum-length 2)
   (company-dabbrev-other-buffers t)
