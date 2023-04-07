@@ -25,8 +25,8 @@
                 transient-history-file (pratik/set-custom-file "history.el")))
 
 (use-package git-gutter
-  :custom
-  (git-gutter:disabled-modes '((org-mode image-mode text-mode)))
+  :init
+  (setq git-gutter:disabled-modes '((org-mode image-mode text-mode)))
   :bind
   ("C-x C-g" . git-gutter)
   ("C-x v =" . git-gutter:popup-hunk)

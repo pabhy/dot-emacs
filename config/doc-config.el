@@ -51,5 +51,12 @@
   :config
   (setq markdown-command "pandoc"))
 
+(use-package lorem-ipsum
+  :bind
+  ("C-c o p" . lorem-ipsum-insert-paragraphs)
+  ("C-c o s" . lorem-ipsum-insert-sentences)
+  ("C-c o l" . lorem-ipsum-insert-list))
+
+
 (provide 'doc-config)
 ;;; doc-config.el ends here
