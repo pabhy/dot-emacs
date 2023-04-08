@@ -82,8 +82,8 @@
 (global-hl-line-mode t)
 
 ;; Default line break behavior.
-(setq fill-column 80)
-(auto-fill-mode nil)
+(setq-default fill-column 80)
+(turn-on-auto-fill)
 
 ;; Tab settings.
 (setq-default
