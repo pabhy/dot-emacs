@@ -63,16 +63,23 @@
 (bind-key "C-c c" 'org-capture)
 (bind-key "C-c i b" 'org-indent-block)
 
+(use-package org-modern
+  :custom
+  (org-modern-table nil) ;; Table styling is good, but not for me.
+  (org-modern-star nil)  ;; I use org-superstar for bullets.
+  (org-modern-list nil)
+  :hook
+  (org-mode . org-modern-mode)
+  (org-agenda-finalize . org-modern-agenda))
 
-;; (use-package org-modern
-;;   :hook
-;;   (org-mode . org-modern-mode)
-;;   (org-agenda-finalize . org-modern-agenda))
+(use-package org-modern-indent
+  :straight (org-modern-indent :type git :host github :repo "jdtsmith/org-modern-indent")
+  :config
+  (add-hook 'org-mode-hook #'org-modern-indent-mode 90))
 
-;; (use-package org-modern-indent
-;;   :straight (org-modern-indent :type git :host github :repo "jdtsmith/org-modern-indent")
-;;   :config
-;;   (add-hook 'org-mode-hook #'org-modern-indent-mode 90))
+(use-package org-superstar
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1))))
 
 (provide 'org-config)
 ;;; org-config.el ends here
