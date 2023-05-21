@@ -49,26 +49,29 @@
         all-the-icons-ivy-rich-icon t))
 
 ;; Use 'Roboto Mono' on non-Mac devices. Otherwise keep the default 'Menlo' font.
-(set-face-attribute 'default nil :height (if IS-MAC 150 105))
-(when (member "Roboto Mono" (font-family-list))
-	(set-frame-font "Roboto Mono"))
+(set-face-attribute 'default nil :height (if IS-MAC 140 105))
+;; (when (member "JetBrains Mono NL" (font-family-list))
+;; 	(set-frame-font "JetBrains Mono NL"))
 
 (use-package solaire-mode
   :config
   (solaire-global-mode 1))
 
 (use-package doom-themes
+  :init
+  (setq doom-vibrant-brighter-modeline t)
+  (setq doom-solarized-dark-brighter-text t)
   :custom
   (doom-themes-treemacs-theme "doom")
   (doom-themes-treemacs-enable-variable-pitch nil)
   (doom-themes-enable-bold t)
   (doom-themes-enable-italic nil)
-  (doom-themes-padded-modeline t)
+  (doom-themes-padded-modeline nil)
   :config
   (doom-themes-treemacs-config)
   (doom-themes-org-config)
   (setq pratik/light-theme 'doom-solarized-light)
-  (setq pratik/dark-theme 'doom-vibrant)
+  (setq pratik/dark-theme 'doom-solarized-dark)
   (pratik/toggle-dark-light-theme))
 
 (use-package doom-modeline

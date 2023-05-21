@@ -60,9 +60,23 @@
 (setq-default inhibit-startup-screen t
               initial-scratch-message ""
               frame-title-format '("%b [%m]"))
-(setq-default line-spacing 0.1)
+(setq-default line-spacing 0.3)
 (setq x-underline-at-descent-line t)
 (display-battery-mode)
+
+
+
+;; set the default encoding system
+(prefer-coding-system 'utf-8)
+(setq default-file-name-coding-system 'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(set-language-environment 'utf-8)
+(setq locale-coding-system 'utf-8)
+
+;; Treat clipboard input as UTF-8 string first; compound text next, etc.
+(setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
 
 ;; It's annoying to me that Emacs makes a sound everytime on error or shows a visual
 ;; bell.
