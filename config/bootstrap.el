@@ -60,7 +60,6 @@
 (setq-default inhibit-startup-screen t
               initial-scratch-message ""
               frame-title-format '("%b [%m]"))
-(setq-default line-spacing 0.3)
 (setq x-underline-at-descent-line t)
 (display-battery-mode)
 

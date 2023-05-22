@@ -49,9 +49,15 @@
         all-the-icons-ivy-rich-icon t))
 
 ;; Use 'Roboto Mono' on non-Mac devices. Otherwise keep the default 'Menlo' font.
-(set-face-attribute 'default nil :height (if IS-MAC 140 105))
-;; (when (member "JetBrains Mono NL" (font-family-list))
-;; 	(set-frame-font "JetBrains Mono NL"))
+(set-face-attribute 'default nil :height (if IS-MAC 140 110))
+
+(when (and IS-LINUX (member "Ubuntu Mono" (font-family-list)))
+  (setq-default line-spacing 0.2)
+	(set-frame-font "Ubuntu Mono"))
+
+(when IS-MAC
+  (setq-default line-spacing 0.3)
+	(set-frame-font "Menlo"))
 
 (use-package solaire-mode
   :config
@@ -59,19 +65,21 @@
 
 (use-package doom-themes
   :init
-  (setq doom-vibrant-brighter-modeline t)
-  (setq doom-solarized-dark-brighter-text t)
+  (when IS-MAC
+    (setq doom-solarized-dark-brighter-text t)
+    (setq pratik/dark-theme 'doom-solarized-dark))
+  (when IS-LINUX
+    (setq doom-themes-padded-modeline t)
+    (setq pratik/dark-theme 'doom-vibrant))
+  (setq pratik/light-theme 'doom-solarized-light)
   :custom
   (doom-themes-treemacs-theme "doom")
   (doom-themes-treemacs-enable-variable-pitch nil)
   (doom-themes-enable-bold t)
   (doom-themes-enable-italic nil)
-  (doom-themes-padded-modeline nil)
   :config
   (doom-themes-treemacs-config)
   (doom-themes-org-config)
-  (setq pratik/light-theme 'doom-solarized-light)
-  (setq pratik/dark-theme 'doom-solarized-dark)
   (pratik/toggle-dark-light-theme))
 
 (use-package doom-modeline
